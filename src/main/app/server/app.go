@@ -156,3 +156,19 @@ func getType(value any) string {
 
 	return name.String()
 }
+
+func SendOk(ctx *fiber.Ctx, data interface{}) error {
+	return ctx.JSON(data)
+}
+
+func SendCreated(ctx *fiber.Ctx, data interface{}) error {
+	ctx.Status(http.StatusCreated)
+	return ctx.JSON(data)
+}
+
+func NotEmpty(value string, message string) error {
+	if value == "" {
+		return errors.NewError(http.StatusBadRequest, message)
+	}
+	return nil
+}

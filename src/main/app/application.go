@@ -2,14 +2,14 @@ package app
 
 import (
 	"fmt"
-	"log"
-	"net/http"
-
 	"github.com/src/main/app/config"
 	"github.com/src/main/app/config/env"
 	"github.com/src/main/app/handlers"
+	"github.com/src/main/app/producer"
 	"github.com/src/main/app/server"
 	"github.com/src/main/app/services"
+	"log"
+	"net/http"
 )
 
 func Run() error {
@@ -23,9 +23,14 @@ func Run() error {
 
 	pingService := services.NewPingService()
 	pingHandler := handlers.NewPingHandler(pingService)
-
 	server.RegisterHandler(pingHandler)
 	server.Register(http.MethodGet, "/ping", server.Resolve[handlers.PingHandler]().Ping)
+
+	userProducer := producer.NewUserProducer()
+	userService := services.NewUserService(userProducer)
+	userHandler := handlers.NewUserHandler(userService)
+	server.RegisterHandler(userHandler)
+	server.Register(http.MethodPost, "/users", server.Resolve[handlers.UserHandler]().CreateUser)
 
 	host := config.String("HOST")
 	if env.IsEmpty(host) && !env.IsDev() {
