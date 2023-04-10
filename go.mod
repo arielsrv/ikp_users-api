@@ -4,8 +4,7 @@ go 1.19
 
 require (
 	github.com/arielsrv/nrfiber v0.0.2
-	github.com/aws/aws-sdk-go v1.34.28
-	github.com/aws/aws-sdk-go-v2/service/sns v1.20.2
+	github.com/aws/aws-sdk-go v1.44.239
 	github.com/go-chassis/go-archaius v1.5.6
 	github.com/gofiber/fiber/v2 v2.42.0
 	github.com/gofiber/swagger v0.1.9
@@ -18,10 +17,6 @@ require (
 require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
 	github.com/andybalholm/brotli v1.0.4 // indirect
-	github.com/aws/aws-sdk-go-v2 v1.17.4 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/configsources v1.1.28 // indirect
-	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.4.22 // indirect
-	github.com/aws/smithy-go v1.13.5 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/fsnotify/fsnotify v1.4.7 // indirect
 	github.com/go-chassis/openlog v1.1.3 // indirect
@@ -30,6 +25,7 @@ require (
 	github.com/go-openapi/spec v0.20.7 // indirect
 	github.com/go-openapi/swag v0.22.3 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
+	github.com/google/go-cmp v0.5.8 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
